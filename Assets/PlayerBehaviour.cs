@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float DistanceGround = 0.1f;
     public LayerMask groundLayer;
     private Rigidbody _rb;
-    private CapsuleCollider _col;
+    private SphereCollider _col;
 
     public float vInput;
     public float hInput;
@@ -24,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _col = GetComponent<CapsuleCollider>();
+        _col = GetComponent<SphereCollider>();
 
 
         
