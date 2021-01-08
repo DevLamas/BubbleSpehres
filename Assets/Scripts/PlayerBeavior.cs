@@ -7,6 +7,7 @@ public class PlayerBeavior : MonoBehaviour
     public float VitesseMouvement = 10f;
     public float VitesseRotation = 100f;
     public float SautVelocite = 20f;
+    public GameBehaviour GameManager;
 
 
     public float DistanceGround = 0.1f;
@@ -26,6 +27,7 @@ public class PlayerBeavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameManager = GameObject.Find("GameManager").GetComponent<GameBehaviour>();
 
         vInput = Input.GetAxis("Vertical") * VitesseMouvement;
         hInput = Input.GetAxis("Horizontal") * VitesseRotation;
@@ -50,5 +52,14 @@ public class PlayerBeavior : MonoBehaviour
         bool grounded = Physics.CheckCapsule(_col.bounds.center, capsuleBottom, DistanceGround, groundLayer, QueryTriggerInteraction.Ignore);
 
         return grounded;
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.tag == "ennemy")
+        {
+            Debug.Log("test2");
+            GameManager.HP -= 1;
+        }
     }
 }

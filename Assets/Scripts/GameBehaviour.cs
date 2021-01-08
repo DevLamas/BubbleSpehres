@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameBehaviour : MonoBehaviour
 {
 
-    private int ViePlayer = 2;
+    private int ViePlayer = 3;
     public bool showWinScreen = false;
     public bool showLooseSreen = false;
     public string labelResultat = "";
@@ -58,7 +58,7 @@ public class GameBehaviour : MonoBehaviour
         }
         if (showLooseSreen)
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "Vous avez perdu !"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), labelResultat))
             {
 
                 SceneManager.LoadScene(0);
