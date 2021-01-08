@@ -26,8 +26,6 @@ public class PlayerBehaviour : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<SphereCollider>();
 
-
-        
     }
 
     // Update is called once per frame
